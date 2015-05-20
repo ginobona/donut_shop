@@ -9,6 +9,7 @@
     <h1>Top Pot Simulator</h1>
     <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
     <table>
+      <tbody id='locations'>
       <tr>
         <th></th>
         <td>7:00 AM</td>
@@ -39,6 +40,7 @@
       <tr id='ballard'>
         <th>Ballard</th>
       </tr>
+    </tbody>
     </table>
   <section>
 <label for="Location">Location</label>
@@ -92,7 +94,6 @@ var capitolhillLocation = new Location ("capitolHill", 4, 37, 2);
 var southlakeunionLocation = new Location ("southLakeUnion", 9, 23, 6.33);
 var wedgewoodLocation = new Location ("wedgewood", 2, 28, 1.25);
 var ballardLocation = new Location ("ballard", 8, 58, 3.75);
-var newLocation = new Location (loc_store, min_hour, max_hour, avg_customer); //Added this on Tuesday night
 
 var loc = document.getElementById("location");
 var min = document.getElementById("min");
@@ -105,14 +106,53 @@ sub.addEventListener("click", function() {
   var max_hour = max.value;
   var avg_customer = avg.value;
   console.log(loc_store, min_hour, max_hour, avg_customer);
-});//Need to send this output to run through lines 62 - 83
+});
 
 downtownLocation.renderRow();
 capitolhillLocation.renderRow();
 southlakeunionLocation.renderRow();
 wedgewoodLocation.renderRow();
 ballardLocation.renderRow();
-newLocation.renderRow(); //Added this on Tuesday night
+
+var shops = [downtownLocation, capitolhillLocation, southlakeunionLocation, wedgewoodLocation, ballardLocation];
+var submit = document.getElementById("submit");
+
+submit.addEventListener('click', function(e) {
+e.preventDefault();
+
+var newLoc = document.getElementById("location").value;
+var newMin = document.getElementById("min").value;
+var newMax = document.getElementById("max").value;
+var newAvg = document.getElementById("avg").value;
+var newLocation = document.getElementById("locations");
+
+var elTr = document.createElement('tr');
+elTr.setAttribute('id', newLoc);
+newLocation.appendChild(elTr);
+
+var elTh = document.createElement('th');
+elTh.textContent = newLoc;
+
+var newTd = document.getElementById(newLoc);
+newTd.appendChild(elTh);
+
+shops.push(new Location(newLoc, newMin, newMax, newAvg));
+
+
+var dailyTotal = 0;
+  for (var i = 0; i < 11; i++) {
+    var hrlyD = shops[shops.length -1].perHour();
+    var elTd = document.createElement('td');
+    elTd.textContent = hrlyD;
+    var elTr = document.getElementById(newLoc);
+    elTr.appendChild(elTd);
+    dailyTotal += hrlyD;
+  }
+  var elTd2 = document.createElement('td');
+  elTd2.textContent = dailyTotal;
+  elTr.appendChild(elTd2);
+});
+
 </script>
 </body>
 </html>

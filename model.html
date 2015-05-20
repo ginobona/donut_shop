@@ -36,8 +36,22 @@
     <th>Ballard</th>
   </tr>
 </table>
-<script type="text/javascript">
+<section>
+<label for="Location">Location</label>
+<input id='location' type='text' name='Location' placeholder="Location">
 
+<label for="Min">Minimum</label>
+<input id='min' type="number" name="Min" placeholder="Min">
+
+<label for="Max">Maximum</label>
+<input id='max' type="number" name="Max" placeholder="Max">
+
+<label for="Avg">Average</label>
+<input id='avg' type="number" name="Avg" placeholder="Avg">
+
+<button id="submit">Submit</button>
+</section>
+<script type="text/javascript">
 function Location(store, minimum, maximum, average) {
   this.store = store;
   this.minimum = minimum;
@@ -74,12 +88,27 @@ var capitolhillLocation = new Location ("capitolHill", 4, 37, 2);
 var southlakeunionLocation = new Location ("southLakeUnion", 9, 23, 6.33);
 var wedgewoodLocation = new Location ("wedgewood", 2, 28, 1.25);
 var ballardLocation = new Location ("ballard", 8, 58, 3.75);
+var newLocation = new Location (loc_store, min_hour, max_hour, avg_customer); //Added this on Tuesday night
+
+var loc = document.getElementById("location");
+var min = document.getElementById("min");
+var max = document.getElementById("max");
+var avg = document.getElementById("avg");
+var sub = document.getElementById("submit");
+sub.addEventListener("click", function() {
+  var loc_store = loc.value;
+  var min_hour = min.value;
+  var max_hour = max.value;
+  var avg_customer = avg.value;
+  console.log(loc_store, min_hour, max_hour, avg_customer);
+});//Need to send this output to run through lines 62 - 83
 
 downtownLocation.renderRow();
 capitolhillLocation.renderRow();
 southlakeunionLocation.renderRow();
 wedgewoodLocation.renderRow();
 ballardLocation.renderRow();
+newLocation.renderRow(); //Added this on Tuesday night
 </script>
 </body>
 </html>

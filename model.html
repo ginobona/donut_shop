@@ -1,13 +1,20 @@
 <!doctype html>
 <html>
   <head>
-    <title>Title</title>
+    <title>Top Pot Doughnut Simulator/title></title>
     <link href="styles.css" type="text/css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Lato:400,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <h1>Top Pot Simulator</h1>
-    <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+    <div id="header">
+      <h1>WHAT THE HELL?!</h1>
+      <h2>Don't make doughnuts you're not going to sell.</h2>
+    </div>
+    <div id="content">
+      <h4>Use the Top Pot Doughnut Simulator to forecast how many doughnuts you need to make each day.
+      </h4>
+    </div>
+    <div id="table">
     <table>
       <tbody id='locations'>
       <tr>
@@ -40,23 +47,30 @@
       <tr id='ballard'>
         <th>Ballard</th>
       </tr>
-    </tbody>
+      </tbody>
     </table>
-  <section>
-<label for="Location">Location</label>
-<input id='location' type='text' name='Location' placeholder="Location">
+  </div>
+  <div id="section">
+    <section>
+      <label for="Location">Location</label>
+      <input id='location' type='text' name='Location' placeholder="Location">
 
-<label for="Min">Minimum</label>
-<input id='min' type="number" name="Min" placeholder="Min">
+      <label for="Min">Minimum</label>
+      <input id='min' type="number" name="Min" placeholder="Min">
 
-<label for="Max">Maximum</label>
-<input id='max' type="number" name="Max" placeholder="Max">
+      <label for="Max">Maximum</label>
+      <input id='max' type="number" name="Max" placeholder="Max">
 
-<label for="Avg">Average</label>
-<input id='avg' type="number" name="Avg" placeholder="Avg">
+      <label for="Avg">Average</label>
+      <input id='avg' type="number" name="Avg" placeholder="Avg">
 
-<button id="submit">Submit</button>
-</section>
+      <button id="submit">Submit</button>
+    </section>
+  </div>
+    <footer>
+      <p>&copy; 2015 Top Pot Doughnuts, Inc. All rights reserved. Those who disobey will regret it.</p>
+    </footer>
+
 <script type="text/javascript">
 function Location(store, minimum, maximum, average) {
   this.store = store;

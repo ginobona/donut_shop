@@ -1,37 +1,53 @@
 <!doctype html>
 <html>
   <head>
-    <title>Top Pot Doughnut Simulator/title></title>
+    <title>Top Pot Doughnut Simulator</title>
     <link href="styles.css" type="text/css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Lato:400,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div id="header">
-      <h1>WHAT THE HELL?!</h1>
-      <h2>Don't make doughnuts you're not going to sell.</h2>
+    <div id="lettersdiv">
+      <ul id="letterslist" class="animated">
+        <li class="animated infinite bounce" id="one">W</li>
+        <li class="animated infinite shake" id="two">H</li>
+        <li class="animated infinite bounce" id="three">A</li>
+        <li class="animated infinite shake" id="four">T</li>
+        <li class="animated infinite shake" id="five"> </li>
+        <li class="animated infinite rubberBand" id="six">T</li>
+        <li class="animated infinite rubberBand" id="seven">H</li>
+        <li class="animated infinite rubberBand" id="eight">E</li>
+        <li class="animated infinite shake" id="nine"> </li>
+        <li class="animated infinite bounce" id="ten">H</li>
+        <li class="animated infinite shake" id="eleven">E</li>
+        <li class="animated infinite bounce" id="twelve">L</li>
+        <li class="animated infinite shake" id="thirteen">L</li>
+        <li class="animated zoomInRight" id="fourteen">?</li>
+        <li class="animated zoomInRight" id="fifteen">!</li>
+      </ul>
     </div>
+      <h2>Don't make doughnuts you're not going to sell.</h2>
     <div id="content">
       <h4>Use the Top Pot Doughnut Simulator to forecast how many doughnuts you need to make each day.
       </h4>
     </div>
     <div id="table">
-    <table>
-      <tbody id='locations'>
-      <tr>
-        <th></th>
-        <td>7:00 AM</td>
-        <td>8:00 AM</td>
-        <td>9:00 AM</td>
-        <td>10:00 AM</td>
-        <td>11:00 AM</td>
-        <td>12:00 PM</td>
-        <td>1:00 PM</td>
-        <td>2:00 PM</td>
-        <td>3:00 PM</td>
-        <td>4:00 PM</td>
-        <td>5:00 PM</td>
-        <td>Total</td>
-      </tr>
+      <table>
+        <tbody id='locations'>
+        <tr>
+          <th></th>
+          <td>7:00 AM</td>
+          <td>8:00 AM</td>
+          <td>9:00 AM</td>
+          <td>10:00 AM</td>
+          <td>11:00 AM</td>
+          <td>12:00 PM</td>
+          <td>1:00 PM</td>
+          <td>2:00 PM</td>
+          <td>3:00 PM</td>
+          <td>4:00 PM</td>
+          <td>5:00 PM</td>
+          <td>Total</td>
+        </tr>
       <tr id='downtown'>
         <th>Downtown</th>
       </tr>
@@ -47,26 +63,21 @@
       <tr id='ballard'>
         <th>Ballard</th>
       </tr>
-      </tbody>
-    </table>
-  </div>
-  <div id="section">
-    <section>
-      <label for="Location">Location</label>
-      <input id='location' type='text' name='Location' placeholder="Location">
-
-      <label for="Min">Minimum</label>
-      <input id='min' type="number" name="Min" placeholder="Min">
-
-      <label for="Max">Maximum</label>
-      <input id='max' type="number" name="Max" placeholder="Max">
-
-      <label for="Avg">Average</label>
-      <input id='avg' type="number" name="Avg" placeholder="Avg">
-
-      <button id="submit">Submit</button>
-    </section>
-  </div>
+        </tbody>
+      </table>
+    </div>
+    <div id="section">
+      <section>
+        <label for="Location">Location</label>
+        <input id='location' type='text' name='Location' placeholder="Location">
+        <label for="Min">Minimum</label>
+        <input id='min' type="number" name="Min" placeholder="Min">
+        <label for="Max">Maximum</label>
+        <input id='max' type="number" name="Max" placeholder="Max">
+        <label for="Avg">Average</label>
+        <input id='avg' type="number" name="Avg" placeholder="Avg">
+        <button id="submit">Submit</button>
+      </section>
     <footer>
       <p>&copy; 2015 Top Pot Doughnuts, Inc. All rights reserved. Those who disobey will regret it.</p>
     </footer>
